@@ -1,0 +1,820 @@
+\documentclass[a4paper,10pt]{article} 
+\usepackage[top=2cm,bottom=2cm,left=2cm,rigth=2cm,heightrounded]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multirow} 
+\usepackage[spanish]{babel}
+\usepackage[usenames]{color}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bbding}  
+\usepackage[dvipsnames]{xcolor}
+\usepackage{csquotes}
+\usepackage[export]{adjustbox}
+\usepackage[all]{nowidow} 
+\usepackage{csquotes} 
+\everymath{\displaystyle}
+\usepackage{setspace}
+\usepackage[yyyymmdd]{datetime} 
+\renewcommand{\dateseparator}{-} 
+\usepackage{fancyhdr}
+\usepackage{amsmath,xcolor}
+\usepackage[inline]{enumitem}
+\usepackage{amsmath} 
+\usepackage{arydshln}
+\usepackage{mathtools}
+
+
+\makeatletter
+\newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
+\makeatother
+
+\newenvironment{bmatrixcolor}[1][red]
+  {\colorlet{savethecolor}{.}\colorlet{bracecolor}{#1}%
+    \color{bracecolor}\left[\color{savethecolor}\begin{matrix}}
+  {\end{matrix}\color{bracecolor}\right]}
+
+
+
+
+\definecolor{bubbles}{rgb}{0.91, 1.0, 1.0}
+\pagecolor{black}
+\color{white}
+\definecolor{mediumspringgreen}{rgb}{0.0, 0.98, 0.6}
+\definecolor{persianrose}{rgb}{1.0, 0.16, 0.64}
+\definecolor{cadmiumyellow}{rgb}{1.0, 0.96, 0.0}
+\definecolor{cyan(process)}{rgb}{0.0, 0.72, 0.92}
+\definecolor{orange-red}{rgb}{1.0, 0.27, 0.0}
+\definecolor{antiquecadmiumyellow}{rgb}{0.98, 0.92, 0.84} %Colores de matrices.
+\definecolor{apricot}{rgb}{0.98, 0.81, 0.69}
+\definecolor{babypink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{guppiegreen}{rgb}{0.0, 1.0, 0.5}
+\definecolor{lava}{rgb}{0.81, 0.06, 0.13}
+\definecolor{maize}{rgb}{0.98, 0.93, 0.37}
+\definecolor{redwood}{rgb}{0.67, 0.31, 0.32}
+\definecolor{rosybrown}{rgb}{0.74, 0.56, 0.56}
+
+
+\pagestyle{fancy} 
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} 
+\fancyfoot[C]{} 
+\fancyfoot[R]{\thepage} 
+\newcommand{\note}[1]{\marginpar{\scriptsize \textcolor{red}{#1}}} 
+\begin{document}
+\fancyhead[C]{}
+\begin{minipage}{0.295\textwidth} 
+\raggedright
+Equipo\\    
+\footnotesize 
+\colorbox[rgb]{0.5, 1.0, 0.83}{\textcolor{black}{Aguilar Valenzuela Montserrat}}
+\\\colorbox[rgb]{0.94, 0.86, 0.51}{\textcolor{black}{Cruz González Irvin Javier}}
+\\\colorbox[rgb]{0.99, 0.76, 0.8}{\textcolor{black}{Murrillo Rosas Estefania}}
+\textcolor[rgb]{0.91, 1.0, 1.0}{\medskip\hrule}
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+\textbf{Matemáticas para las Ciencias Aplicadas II}\\ 
+\normalsize 
+Tarea 5\\
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\\ 
+\footnotesize
+mnts94@ciencias.unam.mx
+1rv1n@ciencias.unam.mx
+hollymol7@ciencias.unam.mx 
+\textcolor[rgb]{0.91, 1.0, 1.0}{\medskip\hrule}
+\end{minipage}
+
+%colorcitos
+\definecolor{iris}{rgb}{0.35, 0.31, 0.81}
+\definecolor{outrageousorange}{rgb}{1.0, 0.43, 0.29}
+\definecolor{sangria}{rgb}{0.57, 0.0, 0.04}
+\definecolor{oceanboatblue}{rgb}{0.0, 0.47, 0.75}
+
+\begin{enumerate}
+
+                                                %EJERCICIO 1 :)
+    
+    \item Escribe los siguientes vectores como una combinación lineal del conjunto $S\{ (1,2-2),(2,-1,1)\}$
+    
+    \begin{enumerate}
+          \item   \textbf{z}=(-4,-3,3)
+          \item   \textbf{v}=(-2,-6,6)
+          \item   \textbf{w}=(-1,-22,22)
+          \item   \textbf{u}=(1,-5,-5)
+
+
+    \end{enumerate}
+    {\color{oceanboatblue} \rule{\linewidth}{0.5mm} }
+
+    \begin{enumerate}
+
+        \item Encontrar los escalares ($c_{1},c_{2}$) tales que $(-4,-3,3)=\\\\c_{1}(1,2,-2)+c_{2}(2,-1,1)$\\
+        
+        $(-4,-3,3)=(c_{1}+2c_{2},2c_{1}-c_{2},-2c_{1}+c_{2})$}\\\\ \hspace{.5cm}{\textit{\textcolor{pink}{Resolviendo con Eliminación Gaussiana}}}}\\
+
+            \left\lbrace
+            \begin{array}{ll}
+            \textup{$c_{1}+2c_{2}=-4$ } \\\\
+            \textup{$2c_{1}-c_{2}=-3$}\\\\
+            \textup{$-2c_{1}+c_{2}=3$}
+            \end{array} 
+            \right.\hspace{.2cm}{$\xRightarrow$}\hspace{.2cm}{ $\begin{bmatrixcolor}[bubbles]
+                1 & 2 & -4   \\
+                2 & -1 & -3  \\
+                -2 & 1 & 3         
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-2F_{1}+F_{2}}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[bubbles]
+                1 & 2 & -4   \\
+                0 & -5 & 5  \\
+                -2 & 1 & 3         
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{2F_{1}+F_{3}}}}}$}\\\\
+
+            $\begin{bmatrixcolor}[bubbles]
+                1 & 2 & -4   \\
+                0 & -5 & 5  \\
+                0 & -5 & -5         
+            \end{bmatrixcolor}$ \hspace{.2cm}{$\xRightarrow{\mathit{-\frac{1}{5}F_{2}}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[bubbles]
+                1 & 2 & -2   \\
+                0 & -1 & 1  \\
+                0 & 5 & -5         
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-5F_{2}+F_{3}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[bubbles]
+                1 & 2 & -4   \\
+                0 & 1 & -1  \\
+                0 & 0 & 0         
+            \end{bmatrixcolor}$} = \\\\
+
+            \textcolor{green}{$c_{1}+2c_{2}=-4$ \hspace{.5cm}{$c_{1}=-4-2(-1)$} \hspace{.5cm}{c_{1}=-4+2}}\\\\
+            \textcolor{green}{$c_{2}=-1$}\\
+            \textcolor{green}{$c_{1}=-2 \therefore Z $} es una combinación lineal de $S.$}\\
+
+
+        
+            \item Encontrar los escalares ($c_{1},c_{2}$) tales que $(-2,-6,6)=\\\\c_{1}(1,2,-2)+c_{2}(2,-1,1)$\\
+        
+            $(-2,-6,6)=(c_{1}+2c_{2},2c_{1}-c_{2},-2c_{1}+c_{2})$}\\\\ \hspace{.5cm}{\textit{\textcolor{pink}{Resolviendo con Gauss-Jordan}}}\\
+
+            \left\lbrace
+            \begin{array}{ll}
+            \textup{$c_{1}+2c_{2}=-2$ } \\\\
+            \textup{$2c_{1}-c_{2}=-6$}\\\\
+            \textup{$-2c_{1}+c_{2}=6$}
+            \end{array}\hspace{.2cm}{$\xRightarrow$}\hspace{.2cm}{ $\begin{bmatrixcolor}[red]
+                1 & 2 & -2   \\
+                2 & -1 & -6  \\
+                -2 & 1 & 6         
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-2F_{1}+F_{2}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[red]
+                1 & 2 & -2   \\
+                0 & -5 & -2  \\
+                -2 & 1 & 6        
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{2F_{1}+F_{3}}}$}\\\\
+
+            $\begin{bmatrixcolor}[red]
+                1 & 2 & -2   \\
+                0 & -5 & -2  \\
+                0 & -5 & 2         
+            \end{bmatrixcolor}$ \hspace{.2cm}{$\xRightarrow{\mathit{-\frac{1}{5}F_{2}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[red]
+                1 & 2 & -2   \\\\
+                0 & 1 & \frac{2}{5}  \\\\
+                0 & 5 & 2         
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-5F_{2}+F_{3}}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[red]
+                1 & 2 & -2   \\\\
+                0 & 1 & \frac{2}{5}  \\\\
+                0 & 0 & 0         
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-2F_{2}+F_{1}}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[red]
+                1 & 0 & -\frac{14}{5}   \\\\
+                0 & 1 & \frac{2}{5}  \\\\
+                0 & 0 & 0         
+            \end{bmatrixcolor}$} \\\\
+
+            \textcolor{green}{$c_{1}=-\frac{14}{5},\hspace{.4cm}{c_{2}=\frac{2}{5}}$\hspace{.4cm} {conjunto solución $\therefore$ $V$ es combinación lineal de $S$}}\\
+   
+   
+            \item Encontrar los escalares ($c_{1},c_{2}$) tales que $(1,-22,22)\\\\=c_{1}(1,2,-2)+c_{2}(2,-1,1)$\\
+        
+            $(1,-22,22)=(c_{1}+2c_{2},2c_{1}-c_{2},-2c_{1}+c_{2})$}\\\\ \hspace{.5cm}{\textit{\textcolor{pink}{Resolviendo con Gauss-Jordan}}}\\
+
+            \left\lbrace
+            \begin{array}{ll}
+            \textup{$c_{1}+2c_{2}=1$ } \\\\
+            \textup{$2c_{1}-c_{2}=-22$}\\\\
+            \textup{$-2c_{1}+c_{2}=22$}
+            \end{array}\hspace{.2cm}{$\xRightarrow$}\hspace{.2cm}{ $\begin{bmatrixcolor}[cyan]
+                1 & 2 & 1   \\
+                2 & -1 & -22  \\
+                -2 & 1 & 22         
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-2F_{1}+F_{2}}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[cyan]
+                1 & 2 & 1   \\
+                0 & -5 & -24  \\
+                -2 & 1 & -22        
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{2F_{1}+F_{3}}}}}$}\\\\
+
+            $\begin{bmatrixcolor}[cyan]
+                1 & 2 & -1   \\
+                0 & -5 & -24  \\
+                0 & -5 & 24         
+            \end{bmatrixcolor}$ \hspace{.2cm}{$\xRightarrow{\mathit{-\frac{1}{5}F_{2}}}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[cyan]
+                1 & 2 & -1  \\\\
+                0 & 1 & \frac{24}{5}  \\\\
+                0 & 5 & 24         
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-5F_{2}+F_{3}}}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[cyan]
+                1 & 2 & 1   \\\\
+                0 & 1 & \frac{24}{5}  \\\\
+                0 & 0 & 0         
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-2F_{2}+F_{1}}}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[cyan]
+                1 & 0 & -\frac{43}{5}   \\\\
+                0 & 1 & \frac{24}{5}  \\\\
+                0 & 0 & 0         
+            \end{bmatrixcolor}$} \\\\
+
+            \textcolor{green}{$c_{1}=-\frac{43}{5},\hspace{.4cm}{c_{2}=\frac{24}{5}}}$\hspace{.4cm} {conjunto solución $\therefore$ $W$ es combinación lineal de $S$}}\\
+
+
+       \item  Encontrar los escalares ($c_{1},c_{2}$) tales que $(1,-5,-5)\\\\=c_{1}(1,2,-2)+c_{2}(2,-1,1)$\\
+        
+            $(1,-5,-5)=(c_{1}+2c_{2},2c_{1}-c_{2},-2c_{1}+c_{2})$}\\\\ \hspace{.5cm}{\textit{\textcolor{pink}{Resolviendo con Gauss-Jordan}}}\\
+
+            \left\lbrace
+            \begin{array}{ll}
+            \textup{$c_{1}+2c_{2}=1$ } \\\\
+            \textup{$2c_{1}-c_{2}=-5$}\\\\
+            \textup{$-2c_{1}+c_{2}=-5$}
+            \end{array}\hspace{.2cm}{$\xRightarrow$}\hspace{.2cm}{ $\begin{bmatrixcolor}[orange]
+                1 & 2 & 1   \\
+                2 & -1 & -5  \\
+                -2 & 1 & 5         
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-2F_{1}+F_{2}}}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[orange]
+                1 & 2 & 1   \\
+                0 & -5 & -7  \\
+                -2 & 1 & -5        
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{2F_{1}+F_{3}}}}$}\\\\
+
+            $\begin{bmatrixcolor}[orange]
+                1 & 2 & -1   \\
+                0 & -5 & -7  \\
+                0 & -5 & -3         
+            \end{bmatrixcolor}$ \hspace{.2cm}{$\xRightarrow{\mathit{-\frac{1}{5}F_{2}}}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[orange]
+                1 & 2 & 1  \\\\
+                0 & 1 & \frac{7}{5}  \\\\
+                0 & 5 & -3         
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-5F_{2}+F_{3}}}}}$}\hspace{.2cm}{ $\begin{bmatrixcolor}[orange]
+                1 & 2 & 1   \\\\
+                0 & 1 & \frac{7}{5}  \\\\
+                0 & 0 & -10         
+            \end{bmatrixcolor}$} \\\\
+
+            \textcolor{green}{$\therefore$ $U$ NO es combinación lineal de $S$,el sistema es inconsistente,no se puede solucionar.}}  
+
+    \end{enumerate}
+
+\newpage    
+                                                %EJERCICIO 2 :|
+    \item Determina si los siguientes conjuntos son linealmente independientes o linealmente dependientes:
+    
+    \begin{enumerate}
+        \item $S = \{(−2, 1, 3),(2, 9, −3),(2, 3, −3)\}$
+        \item $S = \{(−4, −3, 4),(1, −2, 3),(6, 0, 0)\}$
+    \end{enumerate}
+
+    {\color{oceanboatblue} \rule{\linewidth}{0.5mm} }
+
+    \textcolor{pink}{Ecuación vectorial.\\$c_{1}\vec{v_{1}}+c_{2}\vec{v_{2}}+...+c_{n}\vec{v_{n}}$}
+
+    
+    \begin{enumerate}
+        
+        \item Formando Ec vectorial\\\\
+            $c_{1}\vec{v_{1}}+c_{2}\vec{v_{2}}+c_{3}\vec{v_{3}}=\vec{0}}$ \\\\
+            $c_{1}(-2,1,3)+c_{2}(2,9-3)+c_{3}(2,3,-3)$ \\\\
+            $(-2c_{1}+2c_{2}+2c_{3},c_{1}+9c_{2}+3c_{3},3c_{1}-3c_{2}-3c_{3})=(0,0,0)$\\\\
+            \left\lbrace
+            \begin{array}{ll}
+            \textup{$-2c_{1}+2c_{2}+2c_{3}=0$ } \\\\
+            \textup{$c_{1}+9c_{2}+3c_{3}=0$}\\\\
+            \textup{$3c_{1}-3c_{2}-3c_{3}=0$}
+            \end{array}\hspace{.2cm}{$\xRightarrow$}\hspace{.2cm}{ $\begin{bmatrixcolor}[cadmiumyellow]
+                -2 & 2 & 2 & 0   \\
+                1 & 9 & 3 & 0 \\
+                3 & -3 & -3  & 0       
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-\frac{1}{2}F_{1}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[cadmiumyellow]
+                1 & -1 & 1 &  0 \\
+                1 & 9 & 3 & 0  \\
+                3 & -3 & -3  & 0      
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-1(F_{1})+F_{2}}}$}\\\\
+
+            $\begin{bmatrixcolor}[cadmiumyellow]
+                1 & -1 & 1 &  0 \\
+                1 & 10 & 4 & 0  \\
+                3 & -3 & -3  & 0      
+            \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{-3F_{1}+F_{3}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[cadmiumyellow]
+                1 & -1 & 1 &  0 \\
+                1 & 10 & 4 & 0  \\
+                0 & 0 & 0  & 0      
+            \end{bmatrixcolor}$} \\\\ 
+            
+            \textcolor{green}{Solución trivial $\therefore S$ es linealmente dependiente.}
+
+            \item Formando Ec vectorial.\\
+            
+            $c_{1}(-4,-3,4)+c_{2}(1,-2,3)+c_{3}(6,0,0)$\\\\
+            $(-4c_{1}+c_{2}+6c_{3},-3c_{1}-2c_{2},4c_{1}+3c_{2})=(0,0,0)$\\\\
+            \left\lbrace
+            \begin{array}{ll}
+            \textup{$-4c_{1}+c_{2}+6c_{3}=0$ } \\\\
+            \textup{$-3c_{1}-2c_{2}=0$}\\\\
+            \textup{$4c_{1}+3c_{2}=0$}
+            \end{array}\hspace{.2cm}{$\xRightarrow$}\hspace{.2cm}{ $\begin{bmatrixcolor}[persianrose]
+                -4 & 1 & 6 & 0   \\
+                -3 & -2 & 0 & 0 \\
+                4 & 3 & 0  & 0       
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-\frac{1}{4}F_{1}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[persianrose]
+                1 & \frac{1}{4} & -\frac{3}{2} &  0 \\\\
+                -3 & -2 & 0 & 0  \\\\
+                4 & 3 & 0  & 0      
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{3F_{1}+F_{2}}}$}\\\\
+
+            $\begin{bmatrixcolor}[persianrose]
+                1 & -\frac{1}{4} & -\frac{3}{2} &  0 \\\\
+                0 & -\frac{11}{4} & -\frac{9}{2} & 0  \\\\
+                4 & 3 & 0  & 0      
+            \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{-4F_{1}+F_{3}}}$} \hspace{.2cm}{  $\begin{bmatrixcolor}[persianrose]
+                1 & -\frac{1}{4} & -\frac{3}{2} &  0 \\\\
+                0 & -\frac{11}{4} & -\frac{9}{2} & 0  \\\\
+                0 & 4 & 6  & 0      
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-\frac{4}{11}F_{2}}}$} \hspace{.2cm}{  $\begin{bmatrixcolor}[persianrose]
+                1 & -\frac{1}{4} & -\frac{3}{2} &  0 \\\\
+                0 & 1 & \frac{18}{11} & 0  \\\\
+                0 & 4 & 6  & 0      
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-4F_{2}+F_{3}}}$}\\\\ 
+
+            $\begin{bmatrixcolor}[persianrose]
+                1 & -\frac{1}{4} & -\frac{3}{2} &  0 \\\\
+                0 & 1 & \frac{18}{11} & 0  \\\\
+                0 & 0 & -\frac{6}{11}  & 0      
+            \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{\frac{1}{4}F_{2}+F_{1}}}$} \hspace{.2cm}{  $\begin{bmatrixcolor}[persianrose]
+                1 & 0 & -\frac{12}{11} &  0 \\\\
+                0 & 1 & \frac{18}{11} & 0  \\\\
+                0 & 4 & -\frac{6}{11}  & 0      
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-\frac{6}{11}F_{3}}}$} \hspace{.2cm}{  $\begin{bmatrixcolor}[persianrose]
+                1 & 0 & -\frac{12}{11} &  0 \\\\
+                0 & 1 & \frac{18}{11} & 0  \\\\
+                0 & 0 & 1  & 0      
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{-\frac{18}{11}F_{3}+F_{2}}}$}\\\\
+
+            $\begin{bmatrixcolor}[persianrose]
+                1 & 0 & -\frac{12}{11} &  0 \\\\
+                0 & 1 & 0 & 0  \\\\
+                0 & 0 & 1  & 0      
+            \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow$} \hspace{.1cm}{  $\begin{bmatrixcolor}[persianrose]
+                1 & 0 & 0 &  0 \\\\
+                0 & 1 & 0 & 0  \\\\
+                0 & 0 & 1  & 0      
+            \end{bmatrixcolor}$} 
+
+            \textcolor{green}{$c_{1}=0\hspace{.3cm}{c_{2}=0\hspace{.3cm}{c_{3}=0}} \therefore$ el sistema es linealmente independiente}
+
+
+    \end{enumerate}
+
+
+
+                                                %EJERCICIO 3 ;(
+     \item Determina si los siguientes conjuntos generan $\mathds{R}^2$. Si no lo genera, da una descripción geométrica del espacio que genera.
+     
+     \begin{enumerate}
+         \item $S = \{(−1, 1),(3, 1)\}$
+         \item $S = \{(−1, 2),(2, −4)\}$
+         \item $S = \{(1, 3),(−2, −6),(4, 12)\}$
+     \end{enumerate}
+
+     {\color{oceanboatblue} \rule{\linewidth}{0.5mm} }
+
+     \begin{enumerate}
+         
+        \item ¿$S$ genera $\mathds{R^{2}}$?\\
+        
+        $\vec{v}=(u_{1},u_{2})$\\\\ $c_{1}(-1,1)+c_{2}(3,1)=u_{1},u_{2}$\\\\
+        $(-c_{1}+3c_{2},c_{1}+c_{2})=(u_{1},u_{2})$\\
+
+        \left\lbrace
+            \begin{array}{ll}
+            \textup{$-c_{1}+3c_{2}=u_{1}$ } \\\\
+            \textup{$-3c_{1}-2c_{2}=u_{2}$}
+            \end{array}\hspace{.2cm}{$\xRightarrow$}\hspace{.2cm}{ $\begin{bmatrixcolor}[green]
+                -1 & 3 & u_{1} &   \\
+                1 & 1 & u_{2} &         
+            \end{bmatrixcolor}$} \hspace{.2cm}{$\xRightarrow{\mathit{F_{1} \rightleftarrows F_{2}}}$}\hspace{.2cm}{\hspace{.2cm}{ $\begin{bmatrixcolor}[green]
+                1 & 1 & u_{2} &   \\
+                -1 & 3 & u_{1} &         
+            \end{bmatrixcolor}$}}\hspace{.2cm}{$\xRightarrow{\mathit{F_{1}+ F_{2}}}$}\hspace{.2cm}{\hspace{.1cm}{ $\begin{bmatrixcolor}[green]
+                1 & 1 & u_{2} &   \\
+                0 & 4 & u_{1} &         
+            \end{bmatrixcolor}$}}\\\\
+
+            $\xRightarrow{\mathit{\frac{1}{4}F_{2}}}$\hspace{.2cm} {$\begin{bmatrixcolor}[green]
+                1 & 1 & u_{2} &   \\
+                0 & 4 & u_{1} &         
+            \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-F_{2}+ F_{1}}}$}\hspace{.2cm}{\hspace{.1cm}{ $\begin{bmatrixcolor}[green]
+                1 & 1 & -\frac{u_{1}+u_{2}}{4}+u_{2} & \\\\
+                0 & 4 & \frac{u_{1}+u_{2}}{4}&         
+            \end{bmatrixcolor}$}}\hspace{.3cm}{=}{$\begin{bmatrixcolor}[green]
+                1 & 0 & \frac{3u_{2}-u_{1}}{4} & \\\\
+                0 & 1 & \frac{u_{1}+u_{2}}{4}&         
+            \end{bmatrixcolor}$}\\\\
+
+            \textcolor{green}{$c_{1}=\frac{3u_{2}-u_{1}}{4} \hspace{.4cm}{,c_{2}=\frac{u_{1}+u_{2}}{4}}$}\\\\
+
+            ¿$S$ es linealmente independiente?\\\\
+            $c_{1}(-1,1)+c_{2(3,1)}$ \hspace{4.5cm}{De $2$}\hspace{2cm}{ $2c_{2}=0$}\\\\
+            $(-c_{1}+3c_{2},c_{1}+c_{2})=(0,0,0)$\hspace{2.6cm}{$c_{1}=-c_{2}$}\hspace{1.5cm}{ $c_{2}=0$}\\\\
+            $-c_{1}+3c_{2}=0$\hspace{.4cm}{\textcolor{yellow}{...(1)}}\hspace{4cm}{Sust en \textcolor{yellow}{(1)}}\hspace{1.4cm}{\textcolor{green}{ solución}}\\\\
+            $-c_{1}+c_{2}=0$\hspace{.6cm}{\textcolor{yellow}{...(2)}\hspace{3.7cm}{ $-c_{2}+3c_{2}=0$}}\hspace{1cm}{\textcolor{green}{$c_{1}=0$ y $c_{2}=0$}}\\\\
+           \textcolor{green}{ $\therefore S$ es linealmente independiente ya que genera $\mathds{R}^{2}}$}\\
+
+           \item ¿ S genera a $\mathds{R}^2$ ?\\ \\ $\vec{v}=(u_{1},u_{2})$\\\\ $C_{1}(-1,2)+c_{2}(2,-4)=u_{1}u_{2}$\\\\
+           $(-c_{1}+2c_{2},2c_{1}-4c_{2})=(u_{1},u_{2})$ \hspace{1cm}{\left\lbrace
+           \begin{array}{ll}
+           \textup{$-c_{1}+2c_{2}=u_{1}$ } \\\\
+           \textup{$2c_{1}-4c_{2}=u_{2}$}
+           \end{array}}
+\newpage
+           $\xRightarrow$}\hspace{.2cm}{ $\begin{bmatrixcolor}[lava]
+            -1 & 2 & u_{1} &   \\
+            2 & 4& u_{2} &         
+        \end{bmatrixcolor}}$\hspace{.2cm}{$\xRightarrow{\mathit{F_{1} \rightleftarrows F_{2}}}$}\hspace{.2cm}{\hspace{.2cm}{ $\begin{bmatrixcolor}[lava]
+            2 & -4 & u_{2} &   \\
+            -1 & 2 & u_{1} &         
+        \end{bmatrixcolor}$}}\hspace{.2cm}{$\xRightarrow{\mathit{\frac{1}{2}F_{1}}}$}\hspace{.2cm}{\hspace{.2cm}{ $\begin{bmatrixcolor}[lava]
+            1 & 2 &\frac{u_{2}}{2} &   \\\\
+            -1 & 2 & u_{1} &         
+        \end{bmatrixcolor}$}}\hspace{.2cm}{$\xRightarrow{\mathit{F_{1}+F_{2}}}$}\\\\
+         $\begin{bmatrixcolor}[lava]
+            1 & -2 & \frac{u_{2}}{2} &   \\\\
+            0 & 0 & -2u_{1}+\frac{u_{2}}{2} &         
+        \end{bmatrixcolor}$ \hspace{1cm}{\textcolor{green}{$\therefore S$ no genera $\mathds{R}^2}$}\\\\
+        \begin{center}
+            \includegraphics[width=7cm, height=5cm ]{ejercicio3(b).png}
+
+        \end{center}
+        
+        \item ¿ S genera a $\mathds{R}^2$ ?\\ \\ $\vec{v}=(u_{1},u_{2})$\\\\ $c_{1}(1,3)+c_{2}(-2,-6),c_{3}(4,12)=u_{1}u_{2}$\\\\
+        $(c_{1}-2c_{2}+4c_{3},3c_{1}-6c_{2}+12c_{3})=(u_{1},u_{2})$\\\\
+        \left\lbrace
+           \begin{array}{ll}
+           \textup{$c_{1}-2c_{2}+4c_{3}=u_{1}$ } \\\\
+           \textup{$3c_{1}-6c_{2}+12c_{3}=u_{2}$}
+           \end{array} \hspace{.2cm}{$ \xRightarrow $}{\hspace{.2cm}{\hspace{.2cm}{ $\begin{bmatrixcolor}[maize]
+            1 & -2 & 4 & u_{1} &   \\
+            3 & -6 & 12 & u_{2}} &         
+        \end{bmatrixcolor}$}} \hspace{.2cm}{$\xRightarrow{\mathit{-3F_{1}+F_{2}}}$}\hspace{.2cm}{\hspace{.2cm}{ $\begin{bmatrixcolor}[maize]
+            1 & -2 & 4 & u_{1}   \\\\
+            0 & 0 & 0 & 3u_{1}+u_{2} &         
+        \end{bmatrixcolor}$}} \\\\
+
+        \textcolor{green}{$\therefore S$ no genera a $\mathds{R}^2$} 
+
+        \begin{center}
+            \includegraphics[width=7cm, height=5cm ]{ejercicio3(c).png}
+
+        \end{center}
+
+
+     \end{enumerate}
+
+
+                                          %EJERCICIO 4:(    
+     \item Determina si los siguientes sistemas son consistentes. Si es así, escribe la solución en la forma $x=x_{p}+x_{h}$,donde $x_{p}$ es una solución
+            particular de $Ax=b$ y $x_{h}$ es una solución de $Ax=0$.
+
+     \begin{enumerate*}
+         \item $x-4y=17$  \hspace{3cm}{\hspace*{.5cm}{\item $3x-8y+4z=19$}}\\\\
+        \hspace*{1cm}{$3x-12y=51$}\hspace{2.5cm}{\hspace*{.5cm}{ $-6y+2z+4w=5$}}\\\\
+        \hspace*{.7cm}{$-2x+8y=-34$}\hspace{2.5cm}{\hspace*{.5cm}{ $5x+22z+w=29$}}\\\\  
+        \hspace*{6.8cm}{$x-2y+2z=8$}
+     \end{enumerate*}   
+
+     {\color{oceanboatblue} \rule{\linewidth}{0.5mm} }
+
+     \begin{enumerate}
+         
+        \item  $\begin{bmatrixcolor}[orange]
+            1 & 4 & 17   \\
+            3 & -12 & 51  \\
+            -2 & 8 & -34         
+        \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{-3F_{1}+F_{2}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[orange]
+            1 & 4 & 17   \\
+            0 & -24 & 0  \\
+            -2 & 8 & -34        
+        \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{2F_{1}+F_{3}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[orange]
+            1 & 4 & 17   \\
+            0 & -24 & 0  \\
+            0 & 16 & 0        
+        \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-\frac{1}{24}F_{2}}}}$}\\\\ 
+        
+        $\begin{bmatrixcolor}[orange]
+            1 & 4 & 17   \\
+            0 & -1 & 0  \\
+            0 & 16 & 0        
+        \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{-4F_{2}+F_{1}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[orange]
+            1 & 0 & 17   \\
+            0 & 1 & 0  \\
+            0 & 16 & 0        
+        \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{-16F_{2}+F_{3}}}$} \hspace{.2cm}{ $\begin{bmatrixcolor}[orange]
+            1 & 0 & 17   \\
+            0 & 1 & 0  \\
+            0 & 0 & 0        
+        \end{bmatrixcolor}$}\\\\
+
+        $\textcolor{green}{x=17$}\\
+        $\textcolor{green}{y=0 \hspace{.4cm}{\therefore$ el sistema es consistente}}\\\\
+
+
+        \item $\begin{bmatrixcolor}[cyan]
+            0 & 3 & -8 & 4 & 19   \\
+            4 & 0 & -6 & 2 & 5   \\
+            1 & 5 & -0 & 22 & 29  \\
+            0 & 1 & -2 & 2 & 8         
+        \end{bmatrixcolor}$\hspace{.2cm}{$F_{3} \rightleftarrows F_{1}$} \hspace{.2cm}{$\begin{bmatrixcolor}[cyan]
+            1 & 5 & 0 & 22 & 29   \\
+            4 & 0 & -6 & 2 & 5   \\
+            0 & 3 & -8 & 4 & 19  \\
+            0 & 1 & -2 & 2 & 8         
+        \end{bmatrixcolor}$ }\hspace{.2cm}{$\xRightarrow{\mathit{4F_{1}+F_{2}}}$} \hspace{.2cm}{$\begin{bmatrixcolor}[cyan]
+            1 & 5 & 0 & 22 & 29   \\
+            0 & 20 & -6 & -86 & -111   \\
+            0 & 3 & -8 & 4 & 19  \\
+            0 & 1 & -2 & 2 & 8         
+        \end{bmatrixcolor}$ } \\\\
+
+        $\xRightarrow{\mathit{F_{4} \rightleftarrows F_{2}}}}$ $\begin{bmatrixcolor}[cyan]
+            1 & 5 & 0 & 22 & 29   \\ 
+            4 & 1 & -2 & 2 & 8   \\
+            1 & 3 & -8 & 4 & 19  \\
+            0 & 20 & -6 & -86 & -111         
+        \end{bmatrixcolor}$ \hspace{.2cm}{$\xRightarrow{\mathit{-3F_{2}+F_{3}}}$} \hspace{.2cm}{$\begin{bmatrixcolor}[cyan]
+            1 & 5 & 0 & 22 & 29   \\
+            0 & 1 & -2 & 2 & 8   \\
+            0 & 0 & -2 & -2 & -5  \\
+            0 & 20 & -6 & -86 & -111         
+        \end{bmatrixcolor}$ }\hspace{.2cm}{$\xRightarrow{\mathit{-20F_{2}+F_{4}}}$}\\\\
+
+        $\begin{bmatrixcolor}[cyan]
+            1 & 5 & 0 & 22 & 29   \\
+            0 & 1 & -2 & 2 & 8   \\
+            0 & 0 & -2 & -2 & -5  \\
+            0 & 0 & -34 & -126 & -171         
+        \end{bmatrixcolor}$ .... \hspace{.3cm}{  $\begin{bmatrixcolor}[cyan]
+            1 & 0 & 0 & 2 & -36   \\
+            0 & 1 & 0 & 4 & 13   \\
+            0 & 0 & 1 & 1 & 2.5  \\
+            0 & 0 & 0 & 0 & 164         
+        \end{bmatrixcolor}$ } \\\\ 
+        
+        \textcolor{green}{{$ 0 \neq 164 \therefore $ El sistema es inconsistente.}}
+
+
+     \end{enumerate}
+
+
+
+
+
+
+     \item Encuentra \textbf{una base del espacio generado por los renglones, el rango y el espacio nulo} de las siguientes
+     matrices.
+
+     \begin{enumerate*}
+            \item  $A=$ $\begin{bmatrixcolor}[iris]
+                2  & 5 \\
+                -2 & -5 \\
+                -6 & -15
+            \end{bmatrixcolor}$\hspace*{1cm}{\hspace*{1cm} {\item  $B=$ $\begin{bmatrixcolor}[outrageousorange]
+                2 & -3 & 1\\
+               5 & 10 & 6 \\
+                8 & -7 & 5
+            \end{bmatrixcolor}$\hspace*{1cm}{\hspace*{1cm} \item  $C=$ $\begin{bmatrixcolor}[outrageousorange]
+                1 & 4 & 2\\
+               0 & 0 & 1 
+            \end{bmatrixcolor}$\\\\\\\\
+
+            \hspace*{4.5cm}{\hspace*{1cm}\item $D=$ $\begin{bmatrixcolor}[sangria]
+                5  & 2 \\
+                3 & -1 \\
+                2 & 1
+            \end{bmatrixcolor}$}}
+     \end{enumerate*}\\
+
+     {\color{oceanboatblue} \rule{\linewidth}{0.5mm} }
+
+     \begin{enumerate}
+     
+     \item \\ 
+    $\xRightarrow{\mathit{\frac{1}{2}R_{1}}}$}\hspace{.2cm}{\hspace{.1cm}{ $\begin{bmatrixcolor}[iris]
+        1 & \frac{5}{2}& \\\\
+        -2 & -5  & \\\\
+        -6 & -15          
+    \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{2R_{1}+R_{2}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[iris]
+        1 & \frac{5}{2}& \\\\
+        0 & 0  & \\\\
+        -6 & -15          
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{6R_{1}+R_{3}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[iris]
+        1 & \frac{5}{2}& \\\\
+        0 & 0  & \\\\
+        0 & 0          
+    \end{bmatrixcolor}}}$ \\\\
+
+    \textcolor{green}{Los vectores renglones no $0$ de $A$\\$w_{1}=(1,\frac{5}{2})}$\\\\
+    \textcolor{green}{Rango(A)=1}
+
+    \textcolor{green}{Espacio nulo}} \\
+
+    $\begin{bmatrixcolor}[iris]
+        2 & 5 & 0 & \\
+        -2 & -5  & 0 & \\
+        -6 & -15 & 0           
+    \end{bmatrixcolor}$ \hspace{.2cm}{$\xRightarrow{\mathit{3R_{1}+R_{3}}}$ \hspace{.2cm}{$\begin{bmatrixcolor}[iris]
+        2 & 5 & 0 & \\
+        0 & 0  & 0 & \\
+        -6 & -15 & 0           
+    \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow{\mathit{\frac{1}{2}R_{1}}}}$ \hspace{.2cm}{$\begin{bmatrixcolor}[iris]
+        2 & 5 & 0 & \\
+        0 & 0  & 0 & \\
+        0 & 0 & 0           
+    \end{bmatrixcolor}$}\hspace{.2cm}{$\xRightarrow$ \hspace{.2cm}{$\begin{bmatrixcolor}[iris]
+        1 & \frac{5}{2} & 0 & \\
+        0 & 0  & 0 & \\
+        0 & 0 & 0           
+    \end{bmatrixcolor}$} \\
+
+    \textcolor{green}{Sistema Equivalente \\\\ $x_{1}+\frac{5}{2}x_{2}=0 \\\\ x_{1}=-\frac{5}{2}x_{2}\\\\ -\frac{5}{2}x_{2}+\frac{5}{2}x_{2}=0\\\\x_{2}=t \hspace{.5cm}{t \in \mathds{R}}$}\\\\
+
+
+    \item \\
+    
+    $\xRightarrow{\mathit{\frac{1}{2}R_{1}}}$}\hspace{.2cm}{\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        1 & -\frac{3}{2}& \frac{1}{2}& \\\\
+        5 & 10  & 6 & \\\\
+        8 & -7 & 5          
+    \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{-5R_{1}+R_{2}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        1 & -\frac{3}{2} & \frac{1}{2} & \\\\
+        0 & \frac{35}{2}  & \frac{7}{2} & \\\\
+        8 & -7 & 5         
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{-8R_{1}+R_{3}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        1 & -\frac{3}{2} & \frac{1}{2} & \\\\
+        0 & \frac{35}{2}  & \frac{7}{2} & \\\\
+        0 & 5 & 1          
+    \end{bmatrixcolor}}}$ \hspace{.2cm}{$\xRightarrow{\mathit{\frac{2}{35}R_{2}}}}$\\\\\\\\ $\begin{bmatrixcolor}[outrageousorange]
+        1 & -\frac{3}{2} & \frac{1}{2} & \\\\
+        0 & 1 & \frac{1}{5} & \\\\
+        0 & 5 & 1          
+    \end{bmatrixcolor}$ \hspace{.2cm}{$\xRightarrow{\mathit{\frac{3}{2}R_{2}+R_{1}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        0 & 0 & \frac{4}{5} & \\\\
+        0 & 1  & \frac{1}{5} & \\\\
+        0 & 5 & 1          
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{-5R_{2}+R_{3}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        0 & 0 & \frac{4}{5} & \\\\
+        0 & 1  & \frac{1}{5} & \\\\
+        0 & 0 & 0          
+    \end{bmatrixcolor}}}$ \\\\
+
+    \textcolor{green}{Los vectores renglones no $0$ de $B$\\$w_{1}=(0,0,\frac{4}{5})}\hspace{.5cm}{w_{2}=(0,1,\frac{1}{5})}$\\\\
+    \textcolor{green}{Rango(B)=2}\\
+
+    \textcolor{green}{Espacio nulo}} \\
+
+
+    $\xRightarrow{\mathit{\frac{1}{2}R_{1}}}$}\hspace{.2cm}{\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        1 & -\frac{3}{2}& \frac{1}{2}& 0 &  \\\\
+        5 & 10  & 6 & 0 & \\\\
+        8 & -7 & 5  & 0        
+    \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{-5R_{1}+R_{2}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        1 & -\frac{3}{2} & \frac{1}{2} & 0 &\\\\
+        0 & \frac{35}{2}  & \frac{7}{2} & 0 & \\\\
+        8 & -7 & 5   & 0      
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{-8R_{1}+R_{3}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        1 & -\frac{3}{2} & \frac{1}{2} & 0 &\\\\
+        0 & \frac{35}{2}  & \frac{7}{2} & 0 & \\\\
+        0 & 5 & 1  & 0        
+    \end{bmatrixcolor}}}$ \hspace{.2cm}{$\xRightarrow{\mathit{\frac{2}{35}R_{2}}}}$\\\\\\\\ $\begin{bmatrixcolor}[outrageousorange]
+        1 & -\frac{3}{2} & \frac{1}{2} & 0 &\\\\
+        0 & 1 & \frac{1}{5} &  0 &\\\\
+        0 & 5 & 1  & 0        
+    \end{bmatrixcolor}$ \hspace{.2cm}{$\xRightarrow{\mathit{\frac{3}{2}R_{2}+R_{1}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        1 & 0 & \frac{4}{5} & 0 & \\\\
+        0 & 1  & \frac{1}{5} &  0 &\\\\
+        0 & 5 & 1  & 0        
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{-5R_{2}+R_{3}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[outrageousorange]
+        1 & 0 & \frac{4}{5} & 0 & \\\\
+        0 & 1  & \frac{1}{5} & 0 &\\\\
+        0 & 0 & 0  & 0        
+    \end{bmatrixcolor}}}$ \\\\ 
+
+    \textcolor{green}{Sistema Equivalente \\\\ $x_{1}+\frac{5}{2}x_{3}=0 \\\\ x_{3}=t\hspace{.5cm}{t \in \mathds{R}}\\\\x_{1}=-\frac{4}{5}t,\hspace{.5cm}{x_{2}=-\frac{1}{5}t}$}\\\\
+
+    \item \textcolor{green}{Los vectores renglones no $0$ de $B$\\$w_{1}=(1,4,2)}\hspace{.5cm}{w_{2}=(0,0,1)}$\\\\
+    \textcolor{green}{Rango(C)=2}\\
+
+    \textcolor{green}{Espacio nulo}} \\
+
+    $\begin{bmatrixcolor}[outrageousorange]
+        1 & 4 & 2 & 0 & \\
+        0 & 0  & 1 & 0&        
+    \end{bmatrixcolor}$ \\\\
+
+    \textcolor{green}{Sistema Equivalente \\\\ $x_{1}+4x_{2}+2x_{3}=0 \\\\ x_{3}=0 \hspace{.2cm}{x_{1}=-4x_{2}}\\\\-4x_{2}+4x_{2}=0$\\\\ $x_{2}=t$ \hspace{.5cm} {$t\in \mathds{R}$} \\\\ nulidad=1}
+
+
+    \item \\
+    
+    $\xRightarrow{\mathit{\frac{1}{5}R_{1}}}$}\hspace{.2cm}{\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& \\\\
+        3 & -1  & \\\\
+        2 & 1          
+    \end{bmatrixcolor}}$\hspace{.2cm}{$\xRightarrow{\mathit{-3R_{1}+R_{2}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& \\\\
+        0 & -\frac{11}{5}  & \\\\
+        2 & 1         
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{2R_{1}+R_{3}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& \\\\
+        0 & -\frac{11}{5}  & \\\\
+        0 & -\frac{9}{5}         
+    \end{bmatrixcolor}}}$ \hspace{.2cm}{$\xRightarrow{\mathit{-\frac{5}{11}R_{2}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& \\\\
+        0 & 1  & \\\\
+        0 & -\frac{9}{5}         
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{\frac{9}{5}R_{2}+R_{3}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& \\\\
+        0 & 1  & \\\\
+        0 & 0        
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{\frac{2}{5}R_{2}+R_{1}}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & 0& \\\\
+        0 & 1  & \\\\
+        0 & 0       
+    \end{bmatrixcolor}}}$\\\\
+
+    \textcolor{green}{Los vectores renglones no $0$ de $D$\\$w_{1}=(1,0)}\hspace{.5cm}{w_{2}=(0,1)}$\\\\
+    \textcolor{green}{Rango(B)=2}\\
+
+    \textcolor{green}{Espacio nulo}} \\
+
+    $\xRightarrow{\mathit{\frac{1}{5}R_{1}}}$}\hspace{.2cm}{\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& 0 & \\\\
+        3 & -1 &0 & \\\\
+        2 & 1  & 0       
+    \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{-3R_{1}+R_{2}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}&0& \\\\
+        0 & -\frac{11}{5}  & 0& \\\\
+        2 & 1  & 0       
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{2R_{1}+R_{3}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& 0 &\\\\
+        0 & -\frac{11}{5}  & 0 &\\\\
+        0 & -\frac{9}{5}& 0         
+    \end{bmatrixcolor}}}$ \hspace{.2cm}{$\xRightarrow{\mathit{-\frac{5}{11}R_{2}}}}$\\\\
+    
+    $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& 0 & \\\\
+        0 & 1  &0 & \\\\
+        0 & -\frac{9}{5}& 0         
+    \end{bmatrixcolor}$\hspace{.2cm}{$\xRightarrow{\mathit{\frac{9}{5}R_{2}+R_{3}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & \frac{2}{5}& 0 & \\\\
+        0 & 1  &0 & \\\\
+        0 & 0 & 0       
+    \end{bmatrixcolor}}}$\hspace{.2cm}{$\xRightarrow{\mathit{\frac{2}{5}R_{2}+R_{1}}}}${\hspace{.1cm}{ $\begin{bmatrixcolor}[sangria]
+        1 & 0&0 & \\\\
+        0 & 1  & 0 & \\\\
+        0 & 0  &0      
+    \end{bmatrixcolor}}}$\\\\
+
+    \textcolor{green}{Sistema Equivalente \\\\ $x_{1}=0 \\\\ x_{2}=0 $\\\\ $\therefore$ el sistema no tiene solución}
+
+
+
+
+
+    \end{enumerate}
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
