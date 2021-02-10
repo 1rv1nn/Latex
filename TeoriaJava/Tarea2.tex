@@ -1,0 +1,449 @@
+\documentclass[a4paper,10pt]{article} 
+\usepackage[top=2cm,bottom=2cm,left=2cm,rigth=2cm,heightrounded]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multirow} 
+\usepackage[spanish]{babel}
+\usepackage[usenames]{color}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bbding}  
+\usepackage[dvipsnames]{xcolor}
+\usepackage{csquotes}
+\usepackage[export]{adjustbox}
+\usepackage[all]{nowidow} 
+\usepackage{csquotes} 
+\usepackage{tikz}
+\everymath{\displaystyle}
+\usepackage{setspace}
+\usepackage[yyyymmdd]{datetime} 
+\usepackage{comment} % comentarios 
+\usepackage{fancyhdr}
+\usepackage{pifont} 
+\usepackage{colortbl}
+
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+\definecolor{amber}{rgb}{1.0, 0.75, 0.0}
+\definecolor{fluorescentpink}{rgb}{1.0, 0.08, 0.58}
+\definecolor{black}{rgb}{0.0, 0.0, 0.0}
+
+\definecolor{darkspringgreen}{rgb}{0.09, 0.45, 0.27}
+\pagecolor{darkspringgreen}
+\color{white}
+\definecolor{electricyellow}{rgb}{1.0, 1.0, 0.0}
+\definecolor{blue-green}{rgb}{0.0, 0.87, 0.87}
+
+\pagestyle{fancy} 
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} 
+\fancyfoot[C]{} 
+\fancyfoot[R]{\thepage} 
+\newcommand{\note}[1]{\marginpar{\scriptsize \textcolor{red}{#1}}} 
+\begin{document}
+\fancyhead[C]{}
+\begin{minipage}{0.295\textwidth} 
+\raggedright
+Diseño Orientado a Objetos\\    
+\footnotesize 
+\colorbox[rgb]{1.0, 0.5, 0.0}{\textcolor{black}{Cruz González Irvin Javier}}
+\textcolor{electricyellow}{\medskip\hrule}
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+\textbf{Introducción a Ciencias de la Computación 2021-1}\\ 
+\normalsize 
+Tarea 2\\
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\\ 
+\footnotesize
+\colorbox[rgb]{0.0, 0.98, 0.6}{\textcolor{black}{N$^{\circ}$Cuenta: 31716198-2}}
+\textcolor{electricyellow}{\medskip\hrule}
+\end{minipage}
+
+\begin{enumerate}
+    \item \textbf{CONCEPTOS}
+    \begin{enumerate}
+        \item [1.1] \textbf{Explica con tus propias palabras}
+        \begin{itemize}
+            \item ¿Qué es un objeto?\\
+            \textcolor{yellow}{R=Un ente o cualquier cosa que se le puede asignar acciones y caracteristicas durante el plantamiento de un problema.}
+            \item ¿Qué es una clase?\\\textcolor{yellow}{R=Un "plantilla","molde" en el cual se puede crear objetos con la estructura y comportamientos definidos en ella.  }
+            \item ¿Qué es un atributo?\\ \textcolor{yellow}{R=Aquellas caracteristicas o información que posee el objeto. }
+            \item ¿Qué es un método y cuántos tipos hay ?, nómbralos y describelos a cada uno.\\ \textcolor{yellow}{R=Un método son las acciones en la cuales realizará o manipulará los datos del objeto}\\
+                \textcolor{blue-green}{\textcolor{yellow}{Métodos Constructores:}\\Asigna un valor inicial a cada atributo de un objeto(crea al objeto).
+                \\\textcolor{yellow}{Métodos de acceso:}\\Son los encargados de acceder a la información que tiene los atributos del objeto(get).\\\textcolor{yellow}{Métodos mutantes:}\\Son los encargados de modificar a la información que tiene los atributos del objeto(set).
+                \textcolor{yellow}{Métodos de implementación:}\\ Representa los servicios que nos pueden brindar un ejemplo de la clase.\\
+                \textcolor{yellow}{Métodos auxiliares:}\\Resuelve una parte del problema.\\
+                \textcolor{yellow}{Método main:}\\Permite iniciar la ejecución de un programa.}
+            \item ¿Qué es un modificador de acceso?,¿Cuántos tipos hay?, descríbelos a cada uno.\\
+                   \textcolor{yellow}{R=Un modificador de acceso es una palabra reservada del lenguaje que nos permite tener accesibilidad a cada uno de los miembros dentro de un clase.\\
+                   \textcolor{blue-green}{public:\\}Cualquier otra clase puede terner acceso a los miembros de la clase principal.\\
+                   \textcolor{blue-green}{private:\\}Solo los miembros de la misma clase pueden interactuar entre ellos.\\
+                   \textcolor{blue-green}{protected:}\\ Solo una subclase puede tener acceso a los miembros de la clase principal.} 
+            \item Escribe los pasos del diseño Orientado a objetos y describe toda su función para cada paso.
+            
+                    \renewcommand{\labelitemi}{\ding{42}}
+                    \renewcommand{\labelitemii}{\ding{43}} 
+                  \begin{itemize}
+                      \item \textcolor{blue-green}{Determinar las clases:}\\\textcolor{yellow}{Se determina cuales son los objetos en los cuales se trabajará posteriormente.}
+                      \item \textcolor{blue-green}{Determinar responsabilidades:}\\\textcolor{yellow}{En este paso se manejan los métodos y las estructuras de datos es decir aquellas acciones que va realizar el objeto y como las va realizar.}
+                      \item \textcolor{blue-green}{Determinar su colaboración}\\\textcolor{yellow}{Como se relacionan los objeto con otros mismos,si se pueden delegar responsabilidades.}
+                      \item \textcolor{blue-green}{Determinar la accesibilidad}\\\textcolor{yellow}{El ocultamiento de información de una clase,es decir que miembros de ellos tendran todo libertad o no para poder acceder a ellos desde otros clases(public,private).}
+                  \end{itemize}              
+
+
+        \end{itemize}
+    \end{enumerate}
+\newpage
+
+    \item \textbf{Problema 1: Tienda del caracol (4 puntos)}\\\\
+    \hspace*{.5cm}{La tienda del caracol vende productos que tienen un precio fijo por unidad y además preparan} tortas hawaianas, de jamón y de milanesa, cada una con un precio distinto pero todas se preparan básicamente igual. Cuando
+   alguien compra algo, primero paga y después se le proporciona lo que se le pidió. Si lo que compra es una torta ,
+    ésta se prepara al momento, mientras que los otros productos simplemente se toman de los estantees y se entregan.
+    Tiene una caja registradora donde se cobra y un lugar donde se entrega lo que se pidió.
+    \begin{enumerate}
+        \item [2.1] Escribe los sustantivos (objetos) y los verbos(métodos).
+        
+        \begin{tabular}{|l|l|}
+            \hline
+            \rowcolor[rgb]{0.31, 0.78, 0.47}\textcolor{black}{objetos} & \textcolor{black}{métodos}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0}\textcolor{black}{torta de jamón} & \textcolor{black}{pagar/cobrar}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0}\textcolor{black}{torta hawaiana} & \textcolor{black}{entregar}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0}\textcolor{black}{torta de milanesa} & \textcolor{black}{adquirir}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0}\textcolor{black}{producto} & \\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0}\textcolor{black}{caja registradora} & \\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0}\textcolor{black}{lugar de entrega} & \\
+            \hline
+            \end{tabular}
+                   
+        \item [2.2] Clasifica a los objetos en clases.
+        
+           \hspace*{2.6cm} {\fbox{Clase\hspace{.1cm}{tienda}}}\\
+
+            \begin{tabular}{|1|}
+                \hline
+                \rowcolor[rgb]{0.31, 0.78, 0.47} \textcolor{black}{Clase Torta}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{-Torta hawaiana}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{-Torta de jamón}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{-Torta de milanesa} \end{tabular} \hspace{1cm}{\begin{tabular}{|1|}
+                    \hline
+                    \rowcolor[rgb]{0.31, 0.78, 0.47} \textcolor{black}{Clase caja registradora}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{-producto 1}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{-producto 2}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{-producto 3}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{-producto $n$}}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{lugar}
+                
+            \end{tabular}
+
+        \item [2.3] Asigna a cada clase sus responsabilidades (qué le toca hacer a cada quien)
+        
+        \begin{tabular}{|1|}
+            \hline
+            \rowcolor[rgb]{0.31, 0.78, 0.47} \textcolor{black}{Responsabilidades de la clase torta}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{métodos:}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Constructor}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{preparar}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{get o set para ingredientes} \end{tabular} \hspace{1cm}{\begin{tabular}{|1|}
+                \hline
+                \rowcolor[rgb]{0.31, 0.78, 0.47} \textcolor{black}{Responsabilidades de la clase caja registradora}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{métodos:}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Constructor}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{adquirir }\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{cobrar}\\
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{entregar}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{get o set para los productos}\\
+                \hline
+                 \end{tabular}\\
+            }
+        
+        \item [2.4]Responsabilidades.
+                 
+        \textcolor[rgb]{1.0, 0.75, 0.0}{Clase Torta}  \hspace{4.6cm}{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}} \hspace{2.6cm}{ \textcolor[rgb]{0.0, 1.0, 1.0}{Descripción}} %\definecolor{aqua}{rgb}{0.0, 1.0, 1.0}
+        
+        \hspace*{1cm}{Métodos} \hspace{.8cm}{constructor}\hspace{1cm}{COMPRADOR}\hspace{1.2cm}{constructor:Se crea la torta/inicializar}\\\\
+         \hspace*{3.2cm}{preparar} \hspace{5cm}{preparar:Se prepara la torta \\\hspace*{10cm}{a gusto del comprador.}} \\\\  
+         
+         
+         \textcolor[rgb]{1.0, 0.75, 0.0}{Clase caja registradora}  \hspace{3.3cm}{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}} \hspace{2.7cm}{\textcolor[rgb]{0.0, 1.0, 1.0}{Descripción}}\\
+         \hspace*{1cm}{Métodos} \hspace{.8cm}{constructor}\hspace{1.1cm}{COMPRADOR}\hspace{1.4cm}{constructor:Crea la caja}\\\hspace*{11.3cm}{registradora.} \\\\
+         \hspace*{3.4cm}{adquirir} \hspace{4.7cm}{adquirir:Adquiere el producto}\\\hspace*{11cm}{ o la torta.}\\\\
+         \hspace*{3.4cm}{cobrar} \hspace{5.3cm}{cobrar:Compra el producto}\\\hspace*{11.4cm}{adquirido.}\\\\
+         \hspace*{3.4cm}{entregar} \hspace{5.3cm}{entregar:Entrega el}\\\hspace*{10.6cm}{producto adquirido en el} \hspace*{10.6cm}{lugar determinado.}
+\newpage
+        \item [2.5] Asigna el acceso para los métodos.\\
+         
+        \textcolor[rgb]{1.0, 0.75, 0.0}{Clase Torta} \hspace{4.6cm}{{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}}
+
+        \hspace*{1cm}{métodos}\hspace{.8cm}{constructor}\hspace{1.1cm}{COMPRADOR}\\
+        \hspace*{3.2cm}{preparar}\\\\\fbox{Constructor \textbf{público} pues se necesita acceder a la información que existe en este para preparar la torta.}
+        \\\\\fbox{Método preparar \textbf{privado}, pues necesitamos ocultar la información de como se va hacer la torta. }\\
+
+
+        \textcolor[rgb]{1.0, 0.75, 0.0}{Caja registradora} \hspace{4cm}{{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}}\\         
+        \hspace*{1cm}{métodos}\hspace{.8cm}{constructor}\hspace{1.1cm}{COMPRADOR}\\        
+        \hspace*{3.1cm}{adquirir}\\
+        \hspace*{3.1cm}{cobrar}\\
+        \hspace*{3.1cm}{entregar}\\
+
+        \fbox{Métodos Públicos, pues necesitamos que la información este disponible al cliente }
+
+
+    \end{enumerate}
+
+    \item \textbf{Problema 2: Academía Gordencio}\\\\
+    \hspace*{.5cm}En la academía de perros "Gordencio"se entrenan a todo tipo de razas de perros, algunos de ellos} son de raza:
+    boxer, pitbull, rottweiler , pastor alemán y labrador. El entrenamiento básico para cada perro es : dar la patita,
+    hacerse el muerto, abrir la puerta, hacer del baño en un lugar específico y jugar con la pelota, su duración es
+    de 3 meses.El entrenamiento intermedio es : controlar el comportamiento agresivo con duración de 5 meses y el
+    entrenamiento avanzado que abarca la obediencia ,protección y guardia , dura 8 meses.
+
+    \hspace*{.5cm}Para obtener su certificado de entrenamiento , la mascota deberá cursar todo el nivel que su} dueño haya
+    escogido y además presentar un muestra de lo aprendido como examen final.
+    \begin{enumerate}
+        \item [3.1] Escribe los sustantivos (objetos) y los verbos(métodos).
+        
+        \begin{tabular}{|l|l|}
+            \hline
+            \rowcolor[rgb]{0.0, 0.58, 0.71}\textcolor{black}{objetos} & \textcolor{black}{métodos}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0}\textcolor{black}{perros} & \textcolor{black}{dar la patita}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} & \textcolor{black}{hacerse el muerto}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} & \textcolor{black}{abrir la puerta}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} & \textcolor{black}{hacer del baño en un lugar específico} \\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} &\textcolor{black}{jugar con la pelota} \\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} &\textcolor{black}{controlar el comportamiento agresivo} \\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} &\textcolor{black}{obediencia} \\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} &\textcolor{black}{protección} \\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} &\textcolor{black}{guardia} \\
+            \hline
+            \end{tabular}
+        \item [3.2] Clasifica a los objetos en clases.
+        
+        \hspace*{2.6cm} {\fbox{Clase\hspace{.1cm}{Academía Gordencio}}}\\
+
+            \begin{tabular}{|1|}
+                \hline
+                \rowcolor[rgb]{0.0, 0.58, 0.71} \textcolor{black}{Clase entrenamiento básico}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Perro 1}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Perro 2}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Perro $n$} \end{tabular} \hspace{.5cm}{\begin{tabular}{|1|}
+                    \hline
+                    \rowcolor[rgb]{0.0, 0.58, 0.71} \textcolor{black}{Clase entrenamiento intermedio}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{perro 1}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{perro 2}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{perro 3}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{perro $n$}}\\
+                    
+            \end{tabular}\\\\
+
+             \hspace*{2.5cm}     {  {\begin{tabular}{|1|}
+                \hline
+                \rowcolor[rgb]{0.0, 0.58, 0.71} \textcolor{black}{Clase entrenamiento avanzado}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{perro 1}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{perro 2}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{perro 3}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{perro $n$}}\\
+                \hline
+             \end{tabular}
+\newpage
+
+        \item [3.3] Asigna a cada clase sus responsabilidades (qué le toca hacer a cada quien)
+        
+        \begin{tabular}{|1|}
+            \hline
+            \rowcolor[rgb]{0.0, 0.58, 0.71} \textcolor{black}{Responsabilidades de la clase.Entrenamiento básico}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{métodos:}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Constructor}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{hacerse el muerto}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{abrir la puerta}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{hacer del baño en un lugar
+            especı́fico}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{jugar a la pelota}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{dar la patita}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{get o set para nombre del canino,}\\
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{raza,edad,sexo, y nombre del dueño}\\
+            
+        \end{tabular} \hspace{1.5cm}     {  {\begin{tabular}{|1|}
+            \hline
+            \rowcolor[rgb]{0.0, 0.58, 0.71} \textcolor{black}{atributos}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{nombre del canino}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{raza}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{edad}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{sexo}\\
+            \hline
+            \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{dueño}\\
+            \hline
+         \end{tabular}\\\\
+            
+            \begin{tabular}{|1|}
+                \hline
+                \rowcolor[rgb]{0.0, 0.58, 0.71} \textcolor{black}{Responsabilidades de la clase.Entrenamiento intermedio}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{métodos:}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Constructor}\\
+                \hline
+                \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{controlar el comportamiento  }\\
+                \hline
+                 \end{tabular} \hspace{1cm}     {  {\begin{tabular}{|1|}
+                    \hline
+                    \rowcolor[rgb]{0.0, 0.58, 0.71} \textcolor{black}{estados}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Tobich}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Poodle}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{10 años}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{macho}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Irvin}\\
+                    \hline
+                 \end{tabular}\\\\
+
+                 \begin{tabular}{|1|}
+                    \hline
+                    \rowcolor[rgb]{0.0, 0.58, 0.71} \textcolor{black}{Responsabilidades de la clase.Entrenamiento avanzado}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{métodos:}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{Constructor}\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{obediencia  }\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{protección  }\\
+                    \hline
+                    \rowcolor[rgb]{1.0, 0.75, 0.0} \textcolor{black}{guardia }\\
+                    \hline
+                     \end{tabular} \\  
+                                  
+        \item [3.4] Responsabilidades. \\
+        
+
+        \textcolor[rgb]{1.0, 0.75, 0.0}{Clase.Entrenamiento basico}  \hspace{2.5cm}{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}} \hspace{2.6cm}{ \textcolor[rgb]{0.0, 1.0, 1.0}{Descripción}} %\definecolor{aqua}{rgb}{0.0, 1.0, 1.0}
+        
+        \hspace*{1cm}{Métodos} \hspace{.8cm}{constructor}\hspace{1.8cm}{DUEÑO}\hspace{1.2cm}{constructor:Se crea el entrena-\\\hspace*{10.7cm}{miento/inicializar}}\\\\
+         \hspace*{3.2cm}{hacerse el muerto} \hspace{3.3cm}{hacerse el muerto:Se hace el}\\\hspace*{10.4cm}{muerto el perrito.}} \\\\ 
+         \hspace*{3.2cm}{abrir la puerta} \hspace{3.7cm}{abrir la puerta:Abré la puerta  }\\\hspace*{10.4cm}{a invitados nuevos.}} \\\\
+         \hspace*{3.2cm}{hacer del baño} \hspace{3.7cm}{hacer del baño:Hacer del baño  }\\\hspace*{10.4cm}{en un lugar específico.}} \\\\
+         \hspace*{3.2cm}{jugar con la pelota} \hspace{3cm}{jugar con la pelota:Juega con una  }\\\hspace*{11.4cm}{pelota.}} \\\\
+         \hspace*{3.2cm}{dar la patita} \hspace{4cm}{dar la patita:Da la patita cuando }\\\hspace*{11.3cm}{lo saludan.}} \\\\
+         
+         \textcolor[rgb]{1.0, 0.75, 0.0}{Clase.Entrenamiento intermedio}  \hspace{1.5cm}{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}} \hspace{2.7cm}{\textcolor[rgb]{0.0, 1.0, 1.0}{Descripción}}\\
+         \hspace*{1cm}{Métodos} \hspace{.8cm}{constructor}\hspace{1.5cm}{DUEÑO}\hspace{1.4cm}{constructor:Se Crea el entrenam-}\\\hspace*{11.3cm}{iento.} \\\\
+         \hspace*{3.4cm}{comportamiento} \hspace{3.3cm}{comportamiento:Controla el }\\\hspace*{9.5cm}{comportamiento del canino.}\\\\
+\newpage
+         \textcolor[rgb]{1.0, 0.75, 0.0}{Clase.Entrenamiento avanzado}  \hspace{2cm}{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}} \hspace{2.6cm}{ \textcolor[rgb]{0.0, 1.0, 1.0}{Descripción}} %\definecolor{aqua}{rgb}{0.0, 1.0, 1.0}
+        
+        \hspace*{1cm}{Métodos} \hspace{.8cm}{constructor}\hspace{1.8cm}{DUEÑO}\hspace{1.2cm}{constructor:Se crea el entrena-\\\hspace*{10.7cm}{miento/inicializar}}\\\\
+         \hspace*{3.2cm}{obediencia} \hspace{4.5cm}{obediencia:El canino obedece}\\\hspace*{11.4cm}{al dueño.}} \\\\ 
+         \hspace*{3.2cm}{protección} \hspace{4.5cm}{protección:EL canino protege  }\\\hspace*{10.4cm}{a su dueño.}} \\\\
+         \hspace*{3.5cm}{guardia} \hspace{4.6cm}{guardia:el canino hace guardia}\\
+
+        \item [3.5] Asigna el acceso para los métodos.\\
+        
+        \textcolor[rgb]{1.0, 0.75, 0.0}{Clase Entrenamiento basico} \hspace{5.5cm}{{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}}
+
+        \hspace*{1cm}{métodos}\hspace{.8cm}{constructor}\hspace{5cm}{DUEÑO}\\        
+        \hspace*{3.1cm}{hacerse el muerto}\\
+        \hspace*{3.1cm}{abrir la puerta}\\
+        \hspace*{3.1cm}{hacer del baño}\\
+        \hspace*{3.1cm}{jugar con la pelota}\\
+        \hspace*{3.1cm}{dar la patita}\\
+        
+        \fbox{Constructor \textbf{público} pues se necesita acceder a la información del entrenamiento para hacer las actividades.}\\
+
+        \fbox{Métodos Públicos, pues necesitamos que esta información este disponible al dueño del canino }\\\\
+
+        \textcolor[rgb]{1.0, 0.75, 0.0}{Clase Entrenamiento intermedio} \hspace{4.8cm}{{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}}
+
+        \hspace*{1cm}{métodos}\hspace{.8cm}{constructor}\hspace{5cm}{DUEÑO}\\        
+        \hspace*{3.1cm}{controlar el comportamiento}\\
+        
+        \fbox{Constructor \textbf{público} pues se necesita acceder a la información del entrenamiento para hacer la activida.}\\
+
+        \fbox{Métodos Públicos, pues necesitamos que esta información este disponible al dueño del canino }\\\\
+
+
+        \textcolor[rgb]{1.0, 0.75, 0.0}{Clase Entrenamiento avanzado} \hspace{5cm}{{\textcolor[rgb]{0.0, 1.0, 1.0}{Cliente}}
+
+        \hspace*{1cm}{métodos}\hspace{.8cm}{constructor}\hspace{5cm}{DUEÑO}\\        
+        \hspace*{3.1cm}{obediencia}\\
+        \hspace*{3.1cm}{protección}\\
+        \hspace*{3.1cm}{guardia}\\
+    
+        \fbox{Constructor \textbf{público} pues se necesita acceder a la información del entrenamiento para hacer las actividades.}\\
+
+        \fbox{Métodos Públicos, pues necesitamos que esta información este disponible al dueño del canino }
+
+        
+        
+        
+        
+
+
+
+    \end{enumerate}    
+
+\end{enumerate}
+
+
+\end{document}

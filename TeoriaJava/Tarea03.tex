@@ -1,0 +1,242 @@
+\documentclass[a4paper,10pt]{article} 
+\usepackage[top=2cm,bottom=2cm,left=2cm,rigth=2cm,heightrounded]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multirow} 
+\usepackage[spanish]{babel}
+\usepackage[usenames]{color}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bbding}  
+\usepackage[dvipsnames]{xcolor}
+\usepackage{csquotes}
+\usepackage[export]{adjustbox}
+\usepackage[all]{nowidow} 
+\usepackage{csquotes} 
+\everymath{\displaystyle}
+\usepackage{setspace}
+\usepackage[yyyymmdd]{datetime} 
+\renewcommand{\dateseparator}{-} 
+\usepackage{fancyhdr}
+\usepackage[inline]{enumitem}
+\usepackage{arydshln}
+\usepackage[utf8]{inputenc}
+\usepackage[table]{xcolor}
+\usepackage{listings} %Codigo de cualquier lenguaje.
+\setlength{\arrayulewidth}{1mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.5}
+\newcolumntype{s}{>{\columncolor[HTML]{AAACED}} p{3cm}}
+\arrayulecolor[rgb]{1.0, 0.44, 0.37}
+
+
+\makeatletter
+\newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
+\makeatother
+\pagecolor{honeydew} 
+\color{white}
+\definecolor{ballblue}{rgb}{0.13, 0.67, 0.8}
+\definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
+\pagestyle{fancy} 
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} 
+\fancyfoot[C]{} 
+\fancyfoot[R]{\thepage} 
+\newcommand{\note}[1]{\marginpar{\scriptsize \textcolor{red}{#1}}} 
+\begin{document}
+\fancyhead[C]{}
+\begin{minipage}{0.295\textwidth} 
+\raggedright
+Introducción a Ciencias de la Computación 2021-1\\    
+\footnotesize 
+\colorbox[rgb]{0.13, 0.67, 0.8}{\textcolor{black}{Cruz González Irvin Javier}}
+\textcolor[rgb]{1.0, 0.44, 0.37}{\medskip\hrule}
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+\textbf{Tarea 3}\\ 
+\normalsize 
+Diseño Orientado a Objetos(implementación)\\
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\\ 
+\footnotesize
+N$^{\circ}$DE CUENTA: 31716198-2
+ \textcolor[rgb]{1.0, 0.44, 0.37}{\medskip\hrule}
+\end{minipage}
+
+
+
+\begin{enumerate}
+    \item Problema 1.
+    \begin{enumerate}
+        \item Escribe los objetos y los métodos.\\
+        
+        \begin{tabular}{|l|l|}
+            \hline
+            Objetos & Métodos\\
+            \hline
+            alumno & calificarTarea\\
+            \hline
+            profesor &  elaborarTarea\\
+            \hline
+                     & entregarTarea\\
+            \hline
+                    & recibirTarea \\
+            \hline
+                    & getAciertos()/setAciertos() \\ 
+            \hline                     
+            \end{tabular}
+        
+        \item Elabora las tarjetas de responsabilidad para el profesor\\
+                
+        \begin{tabular}{ |l|l| }
+            \hline
+            \multicolumn{2}{|c|}{Clase.Profesor} \\
+            \hline
+             & \\
+            P &  CONSTRUCTOR TAREA.Inicializa los valores(se crea la tarea) \\
+            Ú & recibirTarea-recibe la tarea del alumno \\
+            B & calificarTarea-califica la tarea del alumno apartir de sus aciertos y me regresa su calificación \\
+            L  & getAciertos() - muestra los aciertos de la tarea del alumno \\
+            I  & setAciertos() - modifica los aciertos de la tarea del alumno \\
+            \hline
+            C &  ejercicios=5 \hspace{.5cm}{Almacena los ejercicios propuestos por el profesor}\\
+            O &   aciertos \hspace{1.1cm}{Almacena los aciertos obtenidos por el alumno}            \\  
+             &             \\
+            \hline
+          \end{tabular}
+
+    \end{enumerate}
+
+
+
+    \item Problema 2.
+    
+    \begin{enumerate}
+        \item Escribe los objetos y los métodos\\
+         
+        \begin{tabular}{|l|l|}
+            \hline
+            Objetos & \hspace{3.5cm}{Métodos(Descripción)}\\
+            \hline
+            Cena & cenar()\hspace{2cm}{El comensal accede a la comida}\\
+            \hline
+            Comensal &  elegirComida()\hspace{.8cm}{El comensal elige la comida de cada tiempo}\\
+            \hline
+            Cocinero  & elegirTiempo()\hspace{.8cm}{El comensal elige en que tiempo desea comenzar a cenar}\\
+            \hline 
+                      & Cena()\hspace{2cm}{Constructor.Inicializamos valores }\\      
+            \hline          
+                      & Comensal()\hspace{1.3cm}{Constructor.Inicializamos valores}\\
+             \hline                
+            \end{tabular}\\
+\newpage
+      \item Elabora las tarjetas de responsabilidad para el comensal.\\
+      
+      \begin{tabular}{ |l|l| }
+        \hline
+        \multicolumn{2}{|c|}{Clase.Comensal} \\
+        \hline
+         & \\
+         &  CONSTRUCTOR Comensal.Inicializa los valores(creamos al comensal) \\
+         & cenar\hspace{3.3cm}{El comensal accede a la comida} \\
+        P & elegirComida \hspace{2cm}{El comensal elige la comida de cada tiempo}\\
+        U  & elegirTiempo \hspace{2cm}{El comensal elige en que tiempo desea comenzar a cenar}\\
+        B  &  \\
+        \hline
+        L &  nombre \hspace{3.6cm}{Almacena el nombre del comensal}\\
+        I &   primerTIempo \hspace{2.5cm}{Almacena la comida del primer tiempo} \\  
+        C &   segundoTIempo \hspace{2.3cm}{Almacena la comida del segundo tiempo} \\
+        O &   tercerTiempo \hspace{2.7cm}{Almacena la comida del tercer tiempo} \\     
+         &   guarnición \hspace{3.2cm}{Almacena la guarnicion del tercer tiempo}   \\   
+        \hline
+      \end{tabular}\\\\
+
+
+      \item ¿Cuáles son los atributos de esta clase?
+      \begin{lstlisting}
+
+        String primerTiempo;
+        String segundoTiempo;
+        String tercerTiempo;
+        String guarnicion;       
+               \end{lstlisting}
+
+       \item Escribe en Java el constructor de la clase cena.
+       \begin{lstlisting}
+        
+      public Cena(String primerTiempo, String segundoTiempo, 
+                    String tercerTiempo, String guarnicion) {
+
+      this.primerTiempo = primerTiempo;
+      this.segundoTiempo = segundoTiempo;
+      this.tercerTiempo = tercerTiempo;
+      this.guarnicion = guarnicion;
+
+  }
+       \end{lstlisting}
+       
+
+      \item Escribe el encabezado en Java de un método de acceso que nos diga si el tercer tiempo es filete o pescado
+      a la diabla.
+
+      \begin{lstlisting}
+        public String getTercerTiempo() {
+          return this.tercerTiempo;
+      }
+
+      public static void main(String[] args) {
+        Cena cena1 = new Cena("ensala o pasta", 
+        "sopa o crema de verduras", "pescado a la diabla o filete");
+
+        System.out.println(cena1.getTercerTiempo());
+
+    }
+      \end{lstlisting}
+\newpage
+      \item Escribe el encabezado de un método mutante que elija si la cena va a ser con ensalada o pasta.
+      
+      \begin{lstlisting}
+
+        public void setPrimerTiempo(String primerTiempo) {
+        this.primerTiempo = primerTiempo;
+    }
+
+        cena1.setPrimerTiempo("pasta");
+        System.out.println(cena1.getPrimerTiempo());
+
+        
+      \end{lstlisting}
+
+      \item Escribe en Java el método de implementación al que le damos como parámetros el tipo del segundo tiempo
+      y del tercer tiempo y los actualiza.
+
+      \begin{lstlisting}
+        public boolean elegir(String primerTiempoo, String segundoTiempoo) {
+          primerTiempoo = "ensalada"
+  
+          if (comensal == primerTiempoo) {
+              return true;
+          } else {
+              return false;
+          }
+  
+      }
+      \end{lstlisting}
+      
+      
+
+
+    \end{enumerate}
+    
+
+
+
+\end{enumerate}
+
+
+
+\end{document}
