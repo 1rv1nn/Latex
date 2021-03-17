@@ -1,0 +1,48 @@
+\documentclass[a4paper,10pt]{article} 
+\usepackage[top=.5cm,bottom=2cm,left=1cm,rigth=1cm,heightrounded]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multirow} 
+\usepackage[spanish]{babel}
+\usepackage[usenames]{color}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bbding}  
+\usepackage[dvipsnames]{xcolor}
+\usepackage{csquotes}
+\usepackage[export]{adjustbox}
+\usepackage[all]{nowidow} 
+\usepackage{csquotes} 
+\everymath{\displaystyle}
+\usepackage{setspace}
+\usepackage[ddmmyyyy]{datetime} 
+\renewcommand{\dateseparator}{-} 
+\usepackage{fancyhdr}
+\usepackage{background}
+\usepackage{lipsum}
+
+
+\newlength\mylen
+\setlength\mylen{\dimexpr\paperwidth/38\relax}
+
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{black!14}
+\SetBgContents{\tikz{\draw[step=\mylen] (-.5\paperwidth,-.6\paperheight) grid (.9\paperwidth,2.98\paperheight);}}
+
+\hspace*{6.8cm}{\textsf{Estructuras de Datos}}\\
+{\color{cyan} \noindent\rule{19cm}{0.4pt}}
+\begin{document}
+\begin{enumerate}
+    \lipsum[1-2]
+    
+\end{enumerate}
+\newpage
+
+\textsf{Cruz González Irvin Javier. \hspace{2.8cm}{Calculo de complejidades}\hspace{4.2cm}{\today}}\\
+{\color{cyan} \noindent\rule{19cm}{0.4pt}}\\
+
+\lipsum[2-4]
+
+\end{document}
