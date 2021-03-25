@@ -1,6 +1,6 @@
 Irvin Javier Cruz González 
 
-En este repositorio encontrarás tabajos y tareas en latex al igual que plantillas para tus tareas un poco modificas.
+En este repositorio encontrarás tabajos y tareas en latex al igual que plantillas un poco modificas,para tus tareas.
 
 Facultad de Ciencias
 UNAM
