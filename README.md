@@ -1,5 +1,8 @@
 Irvin Javier Cruz González 
 
-Facultad de Ciencias
+En este repositorio encontrarás tabajos y tareas en latex al igual que plantillas para tus tareas un poco modificas.
 
-UNAM# Latex
+Facultad de Ciencias
+UNAM
+
+#Latex
