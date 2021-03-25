@@ -1,0 +1,110 @@
+\documentclass[10pt,a4paper,two]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{physics}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm]{geometry}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{mhchem}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{blindtext}
+\usepackage{csquotes}
+\usepackage{fancyhdr}
+\usepackage{background}
+\usepackage{capt-of}
+
+\usepackage{lipsum} %Probar tipografía
+
+
+%Cuadriculado
+\newlength\mylen
+\setlength\mylen{\dimexpr\paperwidth/38\relax} %Tamaño de la cuadricula
+
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{brown!36} %color de la cuadricula
+\SetBgContents{\tikz{\draw[step=\mylen] (-.5\paperwidth,-.6\paperheight) grid (.9\paperwidth,2.98\paperheight);}}
+
+
+%Comandos creados
+\newcommand{\name}{\colorbox{pink}{Cruz González Irvin Javier}}  
+\newcommand{\materia}{Estructuras de Datos} 
+
+
+%Encabezado
+\pagestyle{fancy}
+\fancyhf{}                  
+\chead[\materia]{\textsf{Tarea 01}\\Complejidad computacional }
+\rhead[\today]{\rightmark}
+\lhead[\name]{\leftmark}
+
+\renewcommand{\headrulewidth}{1.4pt} %Ancho del encabezado
+\let\HeadRule\headrule
+%Color del encabezado
+\renewcommand\headrule{\color{cyan}\HeadRule}
+
+
+
+
+\begin{document}
+ \begin{enumerate}
+         \item Ejercicio 1.
+         \begin{table}[ht]
+                \begin{minipage}[b]{0.56\linewidth}
+                \centering
+                \begin{tabular}{ | l | r | r | r |}
+                    \hline
+                    Student & Hours/week & Grade \\ \hline \hline
+                    Ada Lovelace & 2 & A \\ \hline
+                    Linus Thorvalds & 8 & A \\ \hline
+                    Bruce Willis & 12 & F \\ \hline
+                    Richard Stallman & 10 & B \\ \hline
+                    Grace Hopper & 12 & A \\ \hline
+                    Alan Turing & 8 & C \\ \hline
+                    Bill Gates & 6 & D \\ \hline
+                    Steve Jobs & 4 & E \\ \hline
+                   \end{tabular}
+                    \caption{table}
+                    \label{table:student}
+                \end{minipage}\hfill
+                \begin{minipage}[b]{0.4\linewidth}
+                \centering
+                \includegraphics[width=48mm,height=40mm]{mj.jpg}
+                \captionof{figure}{The Amazing Spider-Man 519}
+                \label{fig:image}
+                \end{minipage}
+                \end{table}
+ \end{enumerate}
+	
+    	
+\newpage
+
+
+        \lipsum[2-4] %texto de ejemplo
+
+       
+ 
+ \newpage
+ 
+         \lipsum[4-8] %texto de ejemplo
+
+
+
+ \newpage
+ 
+        \lipsum[5-9]    %texto de ejemplo
+     
+
+    
+\end{document}
